@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+  <!-- SEACAVE::cList -->
+
+  <Type Name="SEACAVE::cList&lt;*&gt;">
+    <AlternativeType Name="cList&lt;*&gt;"/>
+    <DisplayString>{{size={_size} capacity={_vectorSize}}}</DisplayString>
+    <Expand>
+        <ArrayItems>
+            <Size>_size</Size>
+            <ValuePointer>_vector</ValuePointer>
+        </ArrayItems>
+    </Expand>
+  </Type>
+
+  <!-- SEACAVE::TImage -->
+
+  <Type Name="SEACAVE::TDMatrix&lt;*&gt;">
+    <AlternativeType Name="SEACAVE::TImage&lt;*&gt;"/>
+    <AlternativeType Name="SFM::TDMatrix&lt;*&gt;"/>
+    <AlternativeType Name="SFM::TImage&lt;*&gt;"/>
+    <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
+  </Type>
+
+  <Type Name="SEACAVE::TDMatrix&lt;*&gt;">
+    <AlternativeType Name="SEACAVE::TImage&lt;*&gt;"/>
+    <AlternativeType Name="SFM::TDMatrix&lt;*&gt;"/>
+    <AlternativeType Name="SFM::TImage&lt;*&gt;"/>
+    <DisplayString Condition="(flags&amp;7)==0">{{UINT8, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==1">{{INT8, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==2">{{UINT16, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==3">{{INT16, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==4">{{INT32, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==5">{{FLOAT32, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==6">{{FLOAT64, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==7">{{USER, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <Expand>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==0">
+        <DisplayString>UINT8</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==1">
+        <DisplayString>INT8</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==2">
+        <DisplayString>UINT16</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==3">
+        <DisplayString>INT16</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==4">
+        <DisplayString>INT32</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==5">
+        <DisplayString>FLOAT32</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==6">
+        <DisplayString>FLOAT64</DisplayString>
+      </Synthetic>
+      <Item Name="[channels]">((flags&amp;0xfff)&gt;&gt;3)+1</Item>
+      <Item Name="[width]">cols</Item>
+      <Item Name="[height]">rows</Item>
+      <Item Name="[data]">data</Item>
+      <Item Name="[stride]">step.p[0]</Item>
+    </Expand>
+  </Type>
+
+  <!-- SEACAVE::TImageX -->
+
+  <Type Name="SEACAVE::TImageX&lt;*&gt;">
+    <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
+  </Type>
+
+  <Type Name="SEACAVE::TImageX&lt;*&gt;">
+    <DisplayString Condition="(flags&amp;7)==0">{{UINT8, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==1">{{INT8, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==2">{{UINT16, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==3">{{INT16, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==4">{{INT32, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==5">{{FLOAT32, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==6">{{FLOAT64, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <DisplayString Condition="(flags&amp;7)==7">{{USER, {((flags&amp;0xfff)&gt;&gt;3)+1} x {cols} x {rows}}}</DisplayString>
+    <Expand>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==0">
+        <DisplayString>UINT8</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==1">
+        <DisplayString>INT8</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==2">
+        <DisplayString>UINT16</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==3">
+        <DisplayString>INT16</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==4">
+        <DisplayString>INT32</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==5">
+        <DisplayString>FLOAT32</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition="(flags&amp;7)==6">
+        <DisplayString>FLOAT64</DisplayString>
+      </Synthetic>
+      <Item Name="[channels]">((flags&amp;0xfff)&gt;&gt;3)+1</Item>
+      <Item Name="[width]">cols</Item>
+      <Item Name="[height]">rows</Item>
+      <Item Name="[data]">data</Item>
+      <Item Name="[stride]">step.p[0]</Item>
+    </Expand>
+  </Type>
+
+</AutoVisualizer>
