@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
 
+  <!-- SEACAVE::CAutoPtr -->
+
+  <Type Name="SEACAVE::CAutoPtr&lt;*&gt;">
+    <AlternativeType Name="CAutoPtr&lt;*&gt;"/>
+    <DisplayString Condition="m_pointer==0">{{NULL}}</DisplayString>
+    <DisplayString Condition="m_pointer!=0">{{{*m_pointer}}}</DisplayString>
+    <Expand>
+      <Synthetic Name="NULL" Condition="m_pointer==0"/>
+      <ExpandedItem Condition="m_pointer!=0">*m_pointer</ExpandedItem>
+    </Expand>
+  </Type>
+
+  <!-- SEACAVE::CAutoPtrArr -->
+
+  <Type Name="SEACAVE::CAutoPtrArr&lt;*&gt;">
+    <AlternativeType Name="CAutoPtrArr&lt;*&gt;"/>
+    <DisplayString Condition="m_pointer==0">{{NULL}}</DisplayString>
+    <DisplayString Condition="m_pointer!=0">{{{*m_pointer}}}</DisplayString>
+    <Expand>
+      <Synthetic Name="NULL" Condition="m_pointer==0"/>
+      <ExpandedItem Condition="m_pointer!=0">*m_pointer</ExpandedItem>
+    </Expand>
+  </Type>
+
+  <!-- SEACAVE::CSharedPtr -->
+
+  <Type Name="SEACAVE::CSharedPtr&lt;*&gt;">
+    <AlternativeType Name="CSharedPtr&lt;*&gt;"/>
+    <DisplayString Condition="m_pointer==0">{{NULL}}</DisplayString>
+    <DisplayString Condition="m_pointer!=0">{{refs={m_pNoRef->val} data={*m_pointer}}}</DisplayString>
+    <Expand>
+      <Synthetic Name="NULL" Condition="m_pointer==0"/>
+      <ExpandedItem Condition="m_pointer!=0">*m_pointer</ExpandedItem>
+    </Expand>
+  </Type>
+
   <!-- SEACAVE::cList -->
 
   <Type Name="SEACAVE::cList&lt;*&gt;">
