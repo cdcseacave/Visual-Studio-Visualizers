@@ -50,6 +50,19 @@
     </Expand>
   </Type>
 
+  <!-- SEACAVE::cArray -->
+
+  <Type Name="SEACAVE::cArray&lt;*&gt;">
+    <AlternativeType Name="cArray&lt;*&gt;"/>
+    <DisplayString>{{size={_size} capacity={$T2}}}</DisplayString>
+    <Expand>
+        <ArrayItems>
+            <Size>_size</Size>
+            <ValuePointer>_vector</ValuePointer>
+        </ArrayItems>
+    </Expand>
+  </Type>
+
   <!-- SEACAVE::TImage -->
 
   <Type Name="SEACAVE::TDMatrix&lt;*&gt;">
