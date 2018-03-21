@@ -48,23 +48,23 @@
       <Item Name="[data]">data</Item>
       <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 0">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(uint8_t*)data</ValuePointer>
+        <ValuePointer>(unsigned __int8*)data</ValuePointer>
       </ArrayItems>
       <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 1">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(int8_t*)data</ValuePointer>
+        <ValuePointer>(__int8*)data</ValuePointer>
       </ArrayItems>
       <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 2">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(uint16_t*)data</ValuePointer>
+        <ValuePointer>(unsigned __int16*)data</ValuePointer>
       </ArrayItems>
       <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 3">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(int16_t*)data</ValuePointer>
+        <ValuePointer>(__int16*)data</ValuePointer>
       </ArrayItems>
       <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 4">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(int32_t*)data</ValuePointer>
+        <ValuePointer>(__int32*)data</ValuePointer>
       </ArrayItems>
       <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 5">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
