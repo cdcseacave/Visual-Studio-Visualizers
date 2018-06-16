@@ -169,10 +169,10 @@
   </Type>
 
   <Type Name="cv::Point_&lt;*&gt;">
-    <DisplayString>({x},{y})</DisplayString>
+    <DisplayString>{x} {y}</DisplayString>
   </Type>
   <Type Name="cv::Point3_&lt;*&gt;">
-    <DisplayString>({x},{y},{z})</DisplayString>
+    <DisplayString>{x} {y} {z}</DisplayString>
   </Type>
   <Type Name="cv::Size_&lt;*&gt;">
     <DisplayString>{width}×{height}</DisplayString>
@@ -191,7 +191,7 @@
     <DisplayString>center={center} size={size} angle={angle}°</DisplayString>
   </Type>
   <Type Name="cv::Rect_&lt;*&gt;">
-    <DisplayString>({x},{y},{x + width},{y + height}) [{width}×{height}]</DisplayString>
+    <DisplayString>{x} {y} {x + width} {y + height} [{width}×{height}]</DisplayString>
     <Expand>
       <Item Name="[area]">width * height</Item>
     </Expand>
@@ -213,7 +213,7 @@
     </Expand>
   </Type>
   <Type Name="cv::Matx&lt;*,*,*&gt;">
-    <DisplayString>{{size = {$T2}×{$T3}}}</DisplayString>
+    <DisplayString>[{$T2}, {$T3}]</DisplayString>
     <Expand>
       <ArrayItems>
         <Size>$T2 * $T3</Size>
@@ -221,6 +221,66 @@
       </ArrayItems>
     </Expand>
   </Type>
+  <!-- 2 x 2 Matrix -->
+  <Type Name="cv::Matx&lt;*,2,2&gt;">      
+      <DisplayString>[2, 2]</DisplayString>
+      <Expand>
+        <Synthetic Name="[row 0]">
+          <DisplayString>{val[0]} {val[1]}</DisplayString>
+        </Synthetic>
+        <Synthetic Name="[row 1]">
+          <DisplayString>{val[2]} {val[3]}</DisplayString>
+        </Synthetic>
+      </Expand>
+  </Type>
+  <!-- 3 x 3 Matrix -->
+  <Type Name="cv::Matx&lt;*,3,3&gt;">      
+      <DisplayString>[3, 3]</DisplayString>
+      <Expand>
+        <Synthetic Name="[row 0]">
+          <DisplayString>{val[0]} {val[1]} {val[2]}</DisplayString>
+        </Synthetic>
+        <Synthetic Name="[row 1]">
+          <DisplayString>{val[3]} {val[4]} {val[5]}</DisplayString>
+        </Synthetic>
+        <Synthetic Name="[row 2]">
+          <DisplayString>{val[6]} {val[7]} {val[8]}</DisplayString>
+        </Synthetic>
+      </Expand>
+  </Type>
+  <!-- 3 x 4 Matrix -->
+  <Type Name="cv::Matx&lt;*,3,4&gt;">      
+      <DisplayString>[3, 4]</DisplayString>
+      <Expand>
+        <Synthetic Name="[row 0]">
+          <DisplayString>{val[0]} {val[1]} {val[2]} {val[3]}</DisplayString>
+        </Synthetic>
+        <Synthetic Name="[row 1]">
+          <DisplayString>{val[4]} {val[5]} {val[6]} {val[7]}</DisplayString>
+        </Synthetic>
+        <Synthetic Name="[row 2]">
+          <DisplayString>{val[8]} {val[9]} {val[10]} {val[11]}</DisplayString>
+        </Synthetic>
+      </Expand>
+  </Type>  
+  <!-- 4 x 4 Matrix -->
+  <Type Name="cv::Matx&lt;*,4,4&gt;">      
+      <DisplayString>[4, 4]</DisplayString>
+      <Expand>
+        <Synthetic Name="[row 0]">
+          <DisplayString>{val[0]} {val[1]} {val[2]} {val[3]}</DisplayString>
+        </Synthetic>
+        <Synthetic Name="[row 1]">
+          <DisplayString>{val[4]} {val[5]} {val[6]} {val[7]}</DisplayString>
+        </Synthetic>
+        <Synthetic Name="[row 2]">
+          <DisplayString>{val[8]} {val[9]} {val[10]} {val[11]}</DisplayString>
+        </Synthetic>
+        <Synthetic Name="[row 3]">
+          <DisplayString>{val[12]} {val[13]} {val[14]} {val[15]}</DisplayString>
+        </Synthetic>
+      </Expand>
+  </Type>  
   <Type Name="cv::Ptr&lt;*&gt;">
     <DisplayString Condition="obj == 0">empty</DisplayString>
     <DisplayString Condition="obj != 0 &amp;&amp; *refcount == 1">Ptr {*obj} [{*refcount} ref]</DisplayString>
