@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+  <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" MenuName="Add to Image Watch"/>
+
   <!-- OpenCV cv::Mat -->
 
   <Type Name="cv::Mat">
@@ -43,34 +45,34 @@
       <Item Name="[width]">cols</Item>
       <Item Name="[height]">rows</Item>
       <Item Name="[stride]">step.p[0]</Item>
-      <Item Name="[continous]">(flags &amp; 16384) == 16384</Item>
-      <Item Name="[submatrix]">(flags &amp; 32768) == 32768</Item>
+      <Item Name="[continous]" Condition="(flags&amp;16384)==16384">true</Item>
+      <Item Name="[submatrix]" Condition="(flags&amp;32768)==32768">true</Item>
       <Item Name="[data]">data</Item>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 0">
+      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==0">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
         <ValuePointer>(uint8_t*)data</ValuePointer>
       </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 1">
+      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==1">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
         <ValuePointer>(int8_t*)data</ValuePointer>
       </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 2">
+      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==2">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
         <ValuePointer>(uint16_t*)data</ValuePointer>
       </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 3">
+      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==3">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
         <ValuePointer>(int16_t*)data</ValuePointer>
       </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 4">
+      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==4">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
         <ValuePointer>(int32_t*)data</ValuePointer>
       </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 5">
+      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==5">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
         <ValuePointer>(float*)data</ValuePointer>
       </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags &amp; 7) == 6">
+      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==6">
         <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
         <ValuePointer>(double*)data</ValuePointer>
       </ArrayItems>
