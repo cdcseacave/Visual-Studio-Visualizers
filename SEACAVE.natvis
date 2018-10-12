@@ -113,34 +113,6 @@
       <Item Name="[continous]" Condition="(flags&amp;16384)==16384">true</Item>
       <Item Name="[submatrix]" Condition="(flags&amp;32768)==32768">true</Item>
       <Item Name="[data]">data</Item>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==0">
-        <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(uint8_t*)data</ValuePointer>
-      </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==1">
-        <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(int8_t*)data</ValuePointer>
-      </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==2">
-        <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(uint16_t*)data</ValuePointer>
-      </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==3">
-        <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(int16_t*)data</ValuePointer>
-      </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==4">
-        <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(int32_t*)data</ValuePointer>
-      </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==5">
-        <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(float*)data</ValuePointer>
-      </ArrayItems>
-      <ArrayItems Condition="data != 0 &amp;&amp; (flags&amp;7)==6">
-        <Size>cols*rows*(((flags&amp;0xfff)&gt;&gt;3)+1)</Size>
-        <ValuePointer>(double*)data</ValuePointer>
-      </ArrayItems>
     </Expand>
   </Type>
 
