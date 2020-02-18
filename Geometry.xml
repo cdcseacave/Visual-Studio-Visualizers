@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GraphicalDebugging>
+
+  <Point Id="Eigen::Matrix">
+    <Coordinates>
+      <X>m_storage.m_data.array[0]</X>
+      <Y>m_storage.m_data.array[1]</Y>
+    </Coordinates>
+  </Point>
+
+  <Ring Id="SEACAVE::TPolygon">
+    <Points>
+      <Array>
+        <Pointer>points._vector</Pointer>
+        <Size>points._size</Size>
+      </Array>
+    </Points>
+  </Ring>
+
+</GraphicalDebugging>
