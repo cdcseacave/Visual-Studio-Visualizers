@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GraphicalDebugging>
-
   <Point Id="Eigen::Matrix">
     <Coordinates>
       <X>m_storage.m_data.array[0]</X>
@@ -16,5 +15,27 @@
       </Array>
     </Points>
   </Ring>
-
+  
+  <Container Id="SEACAVE::cList">
+    <Array>
+      <Pointer>_vector</Pointer>
+      <Size>_size</Size>
+    </Array>
+  </Container>
+  
+  <Ring Id="MVS::TPolygon">
+    <Points>
+      <Array>
+        <Pointer>points._Mypair._Myval2._Myfirst</Pointer>
+        <Size>points._Mypair._Myval2._Mylast - points._Mypair._Myval2._Myfirst</Size>
+      </Array>
+    </Points>
+  </Ring>
+  
+  <Container Id="std::vector">
+    <Array>
+      <Pointer>_Mypair._Myval2._Myfirst</Pointer>
+      <Size>_Mypair._Myval2._Mylast - _Mypair._Myval2._Myfirst</Size>
+    </Array>
+  </Container>
 </GraphicalDebugging>

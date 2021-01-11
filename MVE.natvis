@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+  <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" MenuName="Add to Image Watch"/>
+
+  <!-- mve::TypedImageBase -->
+
+  <Type Name="mve::TypedImageBase&lt;*&gt;">
+    <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
+  </Type>
+
+  <Type Name="mve::TypedImageBase&lt;*&gt;">
+	<DisplayString>{{ {c} x {w} x {h} - {"$T1",sb} }}</DisplayString>
+	<Expand>
+	  <Synthetic Name="[type]" Condition="sizeof($T1)==1">
+		<DisplayString>UINT8</DisplayString>
+	  </Synthetic>
+	  <Synthetic Name="[type]" Condition="sizeof($T1)==2">
+		<DisplayString>UINT16</DisplayString>
+	  </Synthetic>
+	  <Synthetic Name="[type]" Condition="sizeof($T1)==4">
+		<DisplayString>FLOAT32</DisplayString>
+	  </Synthetic>
+	  <Synthetic Name="[type]" Condition="sizeof($T1)==8">
+		<DisplayString>FLOAT64</DisplayString>
+	  </Synthetic>
+	  <Item Name="[channels]">c</Item>
+      <Item Name="[width]">w</Item>
+      <Item Name="[height]">h</Item>
+      <Item Name="[data]">data._Mypair._Myval2._Myfirst</Item>
+	  <Item Name="[stride]">sizeof($T1)*c*w</Item>
+	</Expand>
+  </Type>
+
+</AutoVisualizer>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+  <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" MenuName="Add to Image Watch"/>
+
+  <!-- pmp::Halfedge -->
+
+  <Type Name="pmp::Handle">
+	<AlternativeType Name="pmp::Vertex"/>
+	<AlternativeType Name="pmp::Face"/>
+	<AlternativeType Name="pmp::Halfedge"/>
+	<AlternativeType Name="pmp::Edge"/>
+	<UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
+  </Type>
+
+  <Type Name="pmp::Handle">
+	<AlternativeType Name="pmp::Vertex"/>
+	<AlternativeType Name="pmp::Face"/>
+	<AlternativeType Name="pmp::Halfedge"/>
+	<AlternativeType Name="pmp::Edge"/>
+	<Expand>
+      <Item Name="idx">idx_</Item>
+    </Expand>
+  </Type>
+
+</AutoVisualizer>
