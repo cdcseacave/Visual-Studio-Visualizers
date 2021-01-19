@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+  <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" MenuName="Add to Image Watch"/>
+
+  <!-- open3d::geometry::Image -->
+
+  <Type Name="open3d::geometry::Image">
+    <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
+  </Type>
+
+  <Type Name="open3d::geometry::Image">
+	<DisplayString>{{ {num_of_channels_} x {width_} x {height_} }}</DisplayString>
+	<Expand>
+	  <Synthetic Name="[type]" Condition="bytes_per_channel_==1">
+		<DisplayString>UINT8</DisplayString>
+	  </Synthetic>
+	  <Synthetic Name="[type]" Condition="bytes_per_channel_==2">
+		<DisplayString>UINT16</DisplayString>
+	  </Synthetic>
+	  <Synthetic Name="[type]" Condition="bytes_per_channel_==4">
+		<DisplayString>FLOAT32</DisplayString>
+	  </Synthetic>
+	  <Synthetic Name="[type]" Condition="bytes_per_channel_==8">
+		<DisplayString>FLOAT64</DisplayString>
+	  </Synthetic>
+	  <Item Name="[channels]">num_of_channels_</Item>
+      <Item Name="[width]">width_</Item>
+      <Item Name="[height]">height_</Item>
+      <Item Name="[data]">data_._Mypair._Myval2._Myfirst</Item>
+	  <Item Name="[stride]">bytes_per_channel_*num_of_channels_*width_</Item>
+	</Expand>
+  </Type>
+
+</AutoVisualizer>
