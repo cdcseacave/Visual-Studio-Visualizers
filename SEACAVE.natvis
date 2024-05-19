@@ -163,4 +163,21 @@
     </Expand>
   </Type>
 
+  <!-- SEACAVE::TAABB -->
+
+  <Type Name="SEACAVE::TAABB&lt;*&gt;">
+    <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
+  </Type>
+
+  <Type Name="SEACAVE::TAABB&lt;*&gt;">
+    <DisplayString>{{min={ptMin} max={ptMax}}}</DisplayString>
+    <Expand>
+      <Item Name="[min]">ptMin</Item>
+      <Item Name="[max]">ptMax</Item>
+      <Item Name="[width]">ptMax.m_storage.m_data.array[0]-ptMin.m_storage.m_data.array[0]</Item>
+      <Item Name="[height]" Condition="$T2>=2">ptMax.m_storage.m_data.array[1]-ptMin.m_storage.m_data.array[1]</Item>
+      <Item Name="[depth]" Condition="$T2>=3">ptMax.m_storage.m_data.array[2]-ptMin.m_storage.m_data.array[2]</Item>
+    </Expand>
+  </Type>
+
 </AutoVisualizer>

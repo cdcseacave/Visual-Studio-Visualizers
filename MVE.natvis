@@ -5,10 +5,12 @@
   <!-- mve::TypedImageBase -->
 
   <Type Name="mve::TypedImageBase&lt;*&gt;">
-    <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
+	<AlternativeType Name="mve::Image&lt;*&gt;"/>
+	<UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
   </Type>
 
   <Type Name="mve::TypedImageBase&lt;*&gt;">
+	<AlternativeType Name="mve::Image&lt;*&gt;"/>
 	<DisplayString>{{ {c} x {w} x {h} - {"$T1",sb} }}</DisplayString>
 	<Expand>
 	  <Synthetic Name="[type]" Condition="sizeof($T1)==1">
